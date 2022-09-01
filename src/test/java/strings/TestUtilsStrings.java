@@ -14,6 +14,7 @@ public class TestUtilsStrings {
     public static final String STRING_REVERSE = "Carlos";
     public static final String STRING_VOWEL = "Carlos";
     public static final String STRING_NO_VOWEL = "TV";
+    public static final String STRING_PALINDROMO = "reconocer";
     @Test
     /**
      * Test for method reverse in StringProgram
@@ -26,10 +27,19 @@ public class TestUtilsStrings {
 
     @Test
     /**
+     * Test for vowelString
     */
     public void check_vowel_in_string(){
         Assertions.assertTrue(UtilsStrings.vowelInString(STRING_VOWEL));
         Assertions.assertFalse(UtilsStrings.vowelInString(STRING_NO_VOWEL));
+    }
+
+    @Test
+    /**
+     * Test for isPalindrome Test
+     */
+    public void check_if_string_is_palindrome(){
+        Assertions.assertTrue(UtilsStrings.isPalindrome(STRING_PALINDROMO));
     }
 
 }

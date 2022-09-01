@@ -1,5 +1,7 @@
 package strings.utils;
 
+import java.util.ArrayList;
+
 public class UtilsStrings {
     /**
      * Method for reversing the content of a String
@@ -33,5 +35,25 @@ public class UtilsStrings {
      */
     public static boolean vowelInString(String stringReverse) {
         return stringReverse.toLowerCase().matches(".*[aeiou].*") ? true: false;
+    }
+
+    /**
+     * Method for telling you if a string is palyndrome
+     * @param stringPalindromo
+     * @return true or false
+     */
+    public static boolean isPalindrome(String stringPalindromo) {
+        try{
+            StringBuilder alreves = new StringBuilder();
+            char[] arrayPalindromo = stringPalindromo.toCharArray();
+            for(int i = arrayPalindromo.length -1 ; i >= 0; i --){
+                alreves.append(arrayPalindromo[i]);
+            }
+            return alreves.toString().equals(stringPalindromo) ? true : false;
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 }
