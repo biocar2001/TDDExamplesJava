@@ -56,4 +56,57 @@ public class UtilsStrings {
             return false;
         }
     }
+
+    /**
+     * Delete white spaces of string
+     * @param deleteWhiteSpaces
+     * @return
+     */
+    public static String remoWhiteSpaces(String deleteWhiteSpaces) {
+        if(!deleteWhiteSpaces.equals("")){
+            char[] arraySpaces = deleteWhiteSpaces.toCharArray();
+            StringBuilder finalString = new StringBuilder();
+            for (char caracter: arraySpaces) {
+                if(!String.valueOf(caracter).equals(" ")){
+                    finalString.append(caracter);
+                }
+                
+            }
+            System.out.println("End Value" + finalString.toString());
+            return  finalString.toString();
+        }else{
+            return "Nothing for delete";
+        }
+    }
+
+    /**
+     * print Pattern pyramide
+     * @param rows
+     */
+    public static void printPattern1(int rows) {
+        StringBuilder returnFinal = new StringBuilder();
+        for (int i = 1; i <= rows; i++) {
+            // white spaces in the front of the numbers
+            int numberOfWhiteSpaces = rows - i;
+
+            //print leading white spaces
+            printString(" ", numberOfWhiteSpaces);
+            //print numbers
+            printString(i + " ", i);
+
+            //move to next line
+            System.out.println("");
+        }
+    }
+
+    /**
+     * Print the pyramyde
+     * @param s
+     * @param times
+     */
+    private static void printString(String s, int times) {
+        for (int j = 0; j < times; j++) {
+            System.out.print(s);
+        }
+    }
 }

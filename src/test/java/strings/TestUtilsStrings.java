@@ -13,8 +13,19 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TestUtilsStrings {
     public static final String STRING_REVERSE = "Carlos";
     public static final String STRING_VOWEL = "Carlos";
+    public static final String DELETE_WHITE_SPACES = "Carlos esta in hte house";
     public static final String STRING_NO_VOWEL = "TV";
     public static final String STRING_PALINDROMO = "reconocer";
+    public static final String PYRAMIDAL = "         1 \n" +
+            "        2 2 \n" +
+            "       3 3 3 \n" +
+            "      4 4 4 4 \n" +
+            "     5 5 5 5 5 \n" +
+            "    6 6 6 6 6 6 \n" +
+            "   7 7 7 7 7 7 7 \n" +
+            "  8 8 8 8 8 8 8 8 \n" +
+            " 9 9 9 9 9 9 9 9 9 \n" +
+            "10 10 10 10 10 10 10 10 10 10 ";
     @Test
     /**
      * Test for method reverse in StringProgram
@@ -36,10 +47,29 @@ public class TestUtilsStrings {
 
     @Test
     /**
-     * Test for isPalindrome Test
+     * Test for isPalindrome Method
      */
     public void check_if_string_is_palindrome(){
+        Assertions.assertFalse(UtilsStrings.isPalindrome(STRING_NO_VOWEL));
         Assertions.assertTrue(UtilsStrings.isPalindrome(STRING_PALINDROMO));
     }
 
+    @Test
+    /**
+     * Test for deleteWhiteSpace Method
+     */
+    public void delete_white_space_is_correct(){
+
+        Assertions.assertEquals(UtilsStrings.remoWhiteSpaces(DELETE_WHITE_SPACES),"Carlosestainhtehouse");
+        UtilsStrings.printPattern1(10);
+    }
+
+    @Test
+    /**
+     * Test for pyramide construction Test
+     */
+    public void pyramide_is_built(){
+        //TODO make Unit test for this method
+        UtilsStrings.printPattern1(10);
+    }
 }
