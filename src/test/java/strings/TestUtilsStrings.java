@@ -26,6 +26,14 @@ public class TestUtilsStrings {
             "  8 8 8 8 8 8 8 8 \n" +
             " 9 9 9 9 9 9 9 9 9 \n" +
             "10 10 10 10 10 10 10 10 10 10 ";
+    public static final String STRING_JAVA_FORMATTING_INPUT = "java 100\n" +
+            "cpp 65\n" +
+            "python 50";
+    public static final String STRING_JAVA_FORMATTING_OUTPUT = "================================\n" +
+            "java           100 \n" +
+            "cpp            065 \n" +
+            "python         050 \n" +
+            "================================";
     @Test
     /**
      * Test for method reverse in StringProgram
@@ -71,5 +79,16 @@ public class TestUtilsStrings {
     public void pyramide_is_built(){
         //TODO make Unit test for this method
         UtilsStrings.printPattern1(10);
+    }
+
+    @Test
+    /**
+     * Test for javaOutputFormatting Method
+     */
+    public void check_if_formatting_java_is_correct(){
+        Assertions.assertEquals(
+                UtilsStrings.javaOutputFormatting(STRING_JAVA_FORMATTING_INPUT),STRING_JAVA_FORMATTING_OUTPUT
+        );
+
     }
 }
