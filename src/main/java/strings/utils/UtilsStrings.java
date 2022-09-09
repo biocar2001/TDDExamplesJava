@@ -1,7 +1,5 @@
 package strings.utils;
 
-import java.util.Scanner;
-
 public class UtilsStrings {
     /**
      * Method for reversing the content of a String
@@ -16,17 +14,14 @@ public class UtilsStrings {
             if (rev == null) {
                 throw new IllegalArgumentException("String must have a value");
             }
-
             for (int i = rev.toCharArray().length - 1; i >= 0; i--) {
                 finalReverse.append(rev.toCharArray()[i]);
             }
             System.out.println(finalReverse.toString());
             return finalReverse.toString();
-
         } catch (Exception n) {
             throw new Exception();
         }
-
     }
 
     /**
@@ -74,7 +69,6 @@ public class UtilsStrings {
                 if (!String.valueOf(caracter).equals(" ")) {
                     finalString.append(caracter);
                 }
-
             }
             System.out.println("End Value" + finalString.toString());
             return finalString.toString();
@@ -93,12 +87,10 @@ public class UtilsStrings {
         for (int i = 1; i <= rows; i++) {
             // white spaces in the front of the numbers
             int numberOfWhiteSpaces = rows - i;
-
             //print leading white spaces
             printString(" ", numberOfWhiteSpaces);
             //print numbers
             printString(i + " ", i);
-
             //move to next line
             System.out.println("");
         }
@@ -116,6 +108,11 @@ public class UtilsStrings {
         }
     }
 
+    /**
+     * Description: In base of an exercise hackerRank The method build an specific String formatted
+     * @param formattingField
+     * @return String with specific formatted
+     */
     public static String javaOutputFormatting(String formattingField) {
 
         StringBuilder finalString = new StringBuilder();
